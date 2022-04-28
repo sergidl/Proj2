@@ -17,7 +17,20 @@ public class MyMath {
 		return !isEven(n);
 	}
 
-	public static double Squarearea(double r) {
-		return r*r*PI;
+	public static int max(int ...n){
+		for(int i=0;i<n.length;i++){
+			if(n[i]>n[0]){
+				n[0]=n[i];
+			}
+		}
+		return n[0];
+	}
+	public static int min(int ...n){
+		for(int i=0;i<n.length;i++){
+			if(n[i]<n[0]){
+				n[0]=n[i];
+			}
+		}
+		return n[0];
 	}
 }
