@@ -1,4 +1,5 @@
 package cat.institutmvm.application.entities;
+import cat.institutmvm.application.utils.MyMath;
 
 public class Colour {
 	private String name;
@@ -15,15 +16,16 @@ public class Colour {
 		this.setBlue(blue);
 	}
 
-	// public Colour(int red, int green, int blue) {
-	// 	this(NO_NAME, red, green, blue);
-	// }
-	// public Colour() {
-	// 	this(NO_NAME, MAX_VALUE, MAX_VALUE, MAX_VALUE);
-	// }
-	// public Colour(String name) {
-	// 	this(name, 2, 4, 6);
-	// }
+	public Colour(int red, int green, int blue) {
+		this(NO_NAME, red, green, blue);
+	}
+	public Colour() {
+		this(NO_NAME, MAX_VALUE, MAX_VALUE, MAX_VALUE);
+	}
+	public Colour(String name) {
+
+	 	this(name, MyMath.randomInt(0, 255), MyMath.randomInt(0, 255), MyMath.randomInt(0, 255));
+	}
 	
 
 
