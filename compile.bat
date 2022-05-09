@@ -1,3 +1,9 @@
-javac --module cat.institutmvm.application -d bin --module-source-path .\*\src\
-javac --module com.institutmvm.controller -d bin --module-source-path .\*\src\
-java --module-path .\bin --module com.institutmvm.controller/com.institutmvm.controller.ui.App
+for /d %%D in (*) do (
+	set "TRUE="
+	if  %%~nxD == bin set TRUE=1
+	if  %%~nxD == .vscode set TRUE=1
+	if  %%~nxD == lib set TRUE=1
+	if not defined TRUE (
+		javac --module %%~nxD -d bin --module-source-path .\*\src\
+	)
+)
